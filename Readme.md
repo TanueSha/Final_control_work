@@ -20,6 +20,73 @@
 3. Коммуникация (связывание) удаленного и локального репозиториев. Использованы команды git remote add origin <url>, git branch -M main, git push -u origin main
 4. Заполнение файла README.md.
 5. Cоздание блок-схемы решения задачи в drawio.
+!
+[блок-схема алгоритма]:(D:\УЧЕБА\ПРОГРАМИРОВАНИЕ\PYTHON\GEEKBRAINS\РАЗРАБОТЧИК\Основной блок\FINAL_CONTROL_WORK\ЗАДАНИЕ.jpg )
+
 6. Создание проекта. В терминале VSCode командой dotnet new console был создан проект на C#. Для запуска проекта использована команда dotnet run.
 7. Написание программного кода на C#.
+
+```c#
+string[] array = {"Hello" , "2" , "world" , ":-)"};
+
+int lenArray = 0;
+
+// считаем количество строк
+
+for (int i = 0; i < array.Length; i++)
+
+{
+
+    if (array[i].Length <= 3)
+    {
+        lenArray++;
+    }
+    
+}
+
+// создаем новый массив нужного размера
+
+string[]NewArray = new string[lenArray];
+
+int index = 0;
+
+// заполняем новый массив строками нужного размера
+
+for (int i = 0; i < array.Length; i++)
+
+{
+
+    if (array[i].Length <= 3)
+    {
+        NewArray[index] = array[i];
+        index++;
+    }
+}
+
+// Console.WriteLine($"[{string.Join(", ", array)}] → [{string.Join(", ", NewArray)}]");
+
+PrintArray(array);
+
+Console.Write("→ ");
+
+PrintArray(NewArray);
+
+
+//  Функция вывода массива в терминал
+
+void PrintArray(string[] array)
+
+{
+
+    Console.Write("[ ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        Console.Write($"“{array[i]}”, ");
+    }
+    Console.Write("] ");
+}
+
+```
+
+
 8. После каждого шага выполнялась отправка промежуточных коммитов в удаленный репозиторий командами git add, git commit, git push.
